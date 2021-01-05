@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const { resolveSoa } = require('dns');
 const app = express();
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.listen(PORT, (req, res)=>{
     console.log('server is running at port:', PORT)
